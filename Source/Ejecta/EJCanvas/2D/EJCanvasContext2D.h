@@ -97,7 +97,7 @@ typedef struct {
 	EJTextBaseline textBaseline;
 	__unsafe_unretained EJFontDescriptor *font;
 	
-	EJPath *clipPath;	
+	__unsafe_unretained EJPath *clipPath;	
 } EJCanvasState;
 
 static inline EJColorRGBA EJCanvasBlendColor( EJCanvasState *state, EJColorRGBA color ) {
