@@ -36,11 +36,11 @@ Ejecta is published under the MIT Open Source License.
   s.requires_arc = false
   s.source_files = 'Source/Ejecta/**/*.{h,m,mm}'
   s.resources    = 'Source/Ejecta/ejecta.js', 'Source/Ejecta/EJCanvas/2D/Shaders/*'
+  s.compiler_flags = '-Wno-narrowing'
 
   s.subspec 'SocketRocket' do |r|
     r.requires_arc = true
     r.source_files = 'Source/lib/SocketRocket/*.{h,m}'
-    r.compiler_flags = ''
   end
 
 end

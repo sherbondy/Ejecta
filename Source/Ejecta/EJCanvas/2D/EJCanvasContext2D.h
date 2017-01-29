@@ -83,9 +83,9 @@ typedef struct {
 	
 	EJCompositeOperation globalCompositeOperation;
 	EJColorRGBA fillColor;
-	NSObject<EJFillable> *fillObject;
+	__unsafe_unretained NSObject<EJFillable> *fillObject;
 	EJColorRGBA strokeColor;
-	NSObject<EJFillable> *strokeObject;
+	__unsafe_unretained NSObject<EJFillable> *strokeObject;
 	float globalAlpha;
 	
 	float lineWidth;
@@ -103,11 +103,11 @@ typedef struct {
 static inline EJColorRGBA EJCanvasBlendColor( EJCanvasState *state, EJColorRGBA color ) {
 	float alpha = state->globalAlpha * (float)color.rgba.a/255.0f;
 	return (EJColorRGBA){ .rgba = {
-		.r = (u_char)((float)color.rgba.r * alpha),
-		.g = (u_char)((float)color.rgba.g * alpha),
-		.b = (u_char)((float)color.rgba.b * alpha),
-		.a = (u_char)(EJCompositeOperationFuncs[state->globalCompositeOperation].alphaFactor *
-			 (float)color.rgba.a * state->globalAlpha)
+		.r = (float)color.rgba.r * alpha,
+		.g = (float)color.rgba.g * alpha,
+		.b = (float)color.rgba.b * alpha,
+		.a = EJCompositeOperationFuncs[state->globalCompositeOperation].alphaFactor *
+			 (float)color.rgba.a * state->globalAlpha
 	}};
 }
 
