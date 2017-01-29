@@ -95,7 +95,7 @@ typedef struct {
 	
 	EJTextAlign textAlign;
 	EJTextBaseline textBaseline;
-	EJFontDescriptor *font;
+	__unsafe_unretained EJFontDescriptor *font;
 	
 	EJPath *clipPath;	
 } EJCanvasState;
