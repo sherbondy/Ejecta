@@ -31,7 +31,7 @@ Ejecta is published under the MIT Open Source License.
 
   s.ios.frameworks = 'CoreMotion', 'iAd'
 
-  s.libraries = 'icucore'
+  s.libraries = 'icucore', 'c++'
 
   s.requires_arc = false
   s.source_files = 'Source/Ejecta/**/*.{h,m,mm}'
